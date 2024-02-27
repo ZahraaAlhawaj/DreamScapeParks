@@ -19,9 +19,9 @@ const RideForm = () => {
 
   return (
     <div>
-      ride form
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
+      <h3 className="form-title">Add Ride Form</h3>
+      <form onSubmit={handleSubmit} className="add-form">
+        <label htmlFor="name">Ride Name</label>
         <input id="name" type="text" ref={formRef.name} />
         <label htmlFor="price">Price</label>
         <input id="price" type="number" ref={formRef.price} />

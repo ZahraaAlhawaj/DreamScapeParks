@@ -20,9 +20,9 @@ const FoodForm = () => {
 
   return (
     <div>
-      Food Form
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Food</label>
+      <h3 className="form-title">Add Food Form</h3>
+      <form onSubmit={handleSubmit} className="add-form">
+        <label htmlFor="name">Food Name</label>
         <input id="name" type="text" ref={formRef.name} />
         <label htmlFor="price">Price</label>
         <input id="price" type="number" ref={formRef.price} />

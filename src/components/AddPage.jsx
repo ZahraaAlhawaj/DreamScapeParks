@@ -24,7 +24,7 @@ const AddPage = () => {
 
   return (
     <div className="add-page">
-      <section className="toggle-form">
+      <section className="toggle-buttons">
         <button onClick={toggleForm} value="ride">
           Ride
         </button>
