@@ -1,15 +1,24 @@
 import './App.css'
+
+import { Route, Routes } from 'react-router-dom'
 import Nav from './components/Nav'
 import PurchaseTicket from './components/PurchaseTicket'
-import { Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
+import About from './components/About'
+import AddPage from './components/AddPage'
 
 const App = () => {
   return (
-    <div>
-      <Nav />
-      <Routes>
-        <Route path="/purchase" element={<PurchaseTicket />} />
-      </Routes>
+    <div className="App">
+      <header><Nav /></header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/add" element={<AddPage />} />
+            <Route path="/purchase" element={<PurchaseTicket />} />
+        </Routes>
+      </main>
     </div>
   )
 }
