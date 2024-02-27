@@ -28,10 +28,10 @@ const AddPage = () => {
     <div className="add-page">
       <section className="toggle-buttons">
         <button onClick={toggleForm} value="ride" className="addpage-btn">
-          Ride
+          🎡Ride
         </button>
         <button onClick={toggleForm} value="food" className="addpage-btn">
-          Food
+          🍿Food
         </button>
       </section>
       <section className="form-section">{selectedForm}</section>

@@ -25,7 +25,7 @@ const FoodForm = () => {
       <h3 className="form-title">Add Food Form</h3>
       <form onSubmit={handleSubmit} className="add-form">
         <div className="form-input">
-          <label htmlFor="name">Food Name:</label>
+          <label htmlFor="name">Name:</label>
           <input id="name" type="text" ref={formRef.name} />
         </div>
         <div className="form-input">

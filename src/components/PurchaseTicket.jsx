@@ -106,11 +106,11 @@ const purchaseTicket = () => {
           <h4 className="form-element-header">Contact Details</h4>
           <div className="input-field">
             <label htmlFor="name">Name: </label>
-            <input type="text" id="name"></input>
+            <input type="text" id="name" required></input>
           </div>
           <div className="input-field">
             <label htmlFor="email">Email: </label>
-            <input type="email" id="email"></input>
+            <input type="email" id="email" required></input>
           </div>
         </div>
 
