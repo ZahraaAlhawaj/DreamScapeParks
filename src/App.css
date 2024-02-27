@@ -71,3 +71,17 @@ body {
   gap: 50px;
   flex-wrap: wrap;
 }
+
+.ticket {
+  border-radius: 5px;
+  background-color: white;
+  margin: 20px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  padding: 2px 12px;
+}
+
+#trash {
+  background: none;
+  border: none;
+  padding: 0;
+}
