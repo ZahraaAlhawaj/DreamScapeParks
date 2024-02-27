@@ -7,7 +7,8 @@ const purchaseTicket = () => {
     personName: '',
     food: [],
     rides: [],
-    totalCost: 0
+    totalCost: 0,
+    email: ''
   }
 
   const [checkedFoods, setCheckedFoods] = useState({})
@@ -17,6 +18,7 @@ const purchaseTicket = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     ticket.personName = e.target.name.value
+    ticket.email = e.target.email.value
     ticket.totalCost = totalPrice()
     dummyFoodArray.forEach((food) => {
       if (
@@ -77,8 +79,14 @@ const purchaseTicket = () => {
     <div id="ticket-form">
       <h1>Purchase Ticket</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name: </label>
-        <input type="text" id="name"></input>
+        <div>
+          <label htmlFor="name">Name: </label>
+          <input type="text" id="name"></input>
+        </div>
+        <div>
+          <label htmlFor="email">Email: </label>
+          <input type="email" id="email"></input>
+        </div>
         <h4>Food: </h4>
         <div className="options-container">
           {dummyFoodArray.map((food) => (

@@ -11,15 +11,16 @@ body {
 
 .nav-links a {
   margin: 10px;
+  color: #ecfee8;
 }
 
 .active {
-  color: green;
+  color: blue !important;
 }
 .options-container {
   display: flex;
   flex-direction: column;
-
+}
 .add-page {
   margin-top: 10%;
   display: flex;
@@ -42,5 +43,4 @@ body {
 
 .form-title {
   text-align: center;
-
 }
