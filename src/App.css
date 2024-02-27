@@ -29,6 +29,7 @@ body {
   max-height: 400px;
   overflow: scroll;
   font-size: 2.5vh;
+  max-width: 450px;
 }
 .form-element-header {
   text-align: center;
@@ -93,10 +94,12 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  max-width: max-content;
+  max-width: 50%;
   margin: 0 auto;
   margin-bottom: 5%;
   font-size: 1.5em;
+  /* justify-content: center;
+  align-items: center; */
 }
 #contact-details h4 {
   text-align: center;
@@ -121,7 +124,7 @@ body {
 .item-label {
   padding-right: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 45rem;
   column-gap: 50px;
 }
@@ -131,6 +134,18 @@ body {
   font-size: 1.1em;
 }
 .input-field input {
+  width: 200px;
+  height: 25px;
+  font-size: 0.9em;
+}
+
+.input-field-ticket {
+  padding: 2% 10%;
+  min-width: 50px;
+  font-size: 1.1em;
+  align-self: center;
+}
+.input-field-ticket input {
   width: 200px;
   height: 25px;
   font-size: 0.9em;
@@ -278,4 +293,10 @@ body {
     rgba(150, 93, 233, 1) 10.8%,
     rgba(99, 88, 238, 1) 94.3%
   );
+}
+
+.food-pic,
+.ride-pic {
+  width: 60px;
+  /* height: 60px; */
 }
