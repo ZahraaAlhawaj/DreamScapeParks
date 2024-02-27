@@ -1,6 +1,6 @@
 import dummyFoodArray from '../Data/food'
 import dummyRidesArray from '../Data/rides'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 const purchaseTicket = () => {
   let ticket = {
@@ -19,13 +19,19 @@ const purchaseTicket = () => {
     ticket.personName = e.target.name.value
     ticket.totalCost = totalPrice()
     dummyFoodArray.forEach((food) => {
-      e.target[food.name].checked && ticket.food.push(e.target[food.name].value)
+      if (
+        e.target[food.name][0] !== undefined &&
+        e.target[food.name][1].value !== ''
+      ) {
+        ticket.food.push(e.target[food.name][0].value)
+      }
     })
     dummyRidesArray.forEach((ride) => {
       e.target[ride.name].checked &&
         ticket.rides.push(e.target[ride.name].value)
     })
     e.target.reset()
+    setCheckedFoods({})
     console.log(ticket)
   }
 
@@ -116,7 +122,7 @@ const purchaseTicket = () => {
             </label>
           ))}
         </div>
-        <h3>Total Price: {totalPrice()} </h3>
+        <h3 id="totalPrice">Total Price: {totalPrice()} </h3>
         <button type="submit"> Submit</button>
       </form>
     </div>
