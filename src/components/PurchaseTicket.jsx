@@ -104,11 +104,11 @@ const purchaseTicket = () => {
       <form onSubmit={handleSubmit}>
         <div id="contact-details">
           <h4 className="form-element-header">Contact Details</h4>
-          <div className="input-field">
+          <div className="input-field-ticket">
             <label htmlFor="name">Name: </label>
             <input type="text" id="name"></input>
           </div>
-          <div className="input-field">
+          <div className="input-field-ticket">
             <label htmlFor="email">Email: </label>
             <input type="email" id="email"></input>
           </div>
@@ -119,6 +119,7 @@ const purchaseTicket = () => {
             <h4 className="form-element-header">Food</h4>
             <div id="title">
               <div className="item-label">
+                <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 <div>Name</div>
                 <div>Price</div>
@@ -135,6 +136,7 @@ const purchaseTicket = () => {
                     value={food.name}
                     onChange={handleFoodChange}
                   />
+                  <img src={food.pic} alt={food.name} className="food-pic" />
                   <div>{food.name}</div>
                   <div>${food.price}</div>
                 </label>
@@ -158,6 +160,7 @@ const purchaseTicket = () => {
             <div id="title">
               <div className="item-label">
                 <div>&nbsp;</div>
+                <div>&nbsp;</div>
                 <div>Name</div>
                 <div>Price</div>
               </div>
@@ -172,6 +175,7 @@ const purchaseTicket = () => {
                     value={ride._id}
                     onChange={handleRideChange}
                   />
+                  <img src={ride.pic} alt={ride.name} className="ride-pic" />
                   <div>{ride.name}</div>
                   <div>${ride.price}</div>
                 </label>
