@@ -3,7 +3,7 @@ const Ride = ({ ride }) => {
     <div className="ride">
       <img src={ride.pic} alt={ride.name} className="ride-img" />
       <h3>{ride.name}</h3>
-      <h4>Cost: {ride.price}</h4>
+      <h4>Cost: ${ride.price}</h4>
     </div>
   )
 }
