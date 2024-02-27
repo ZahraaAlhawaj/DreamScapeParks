@@ -9,21 +9,20 @@ const Home = () => {
     const BASE_URL = import.meta.env.VITE_BASE_URL
     const getRides = async () => {
       const response = await axios.get(`${BASE_URL}/rides`)
-      setRides(response.data.result)
+      setRides(response.data)
     }
     getRides()
   }, [])
 
   return (
-    // <div>
-    //   <h1>Rides</h1>
-    //   <div className="rides-div">
-    //     {rides.map((ride) => (
-    //       <Ride key={ride._id} ride={ride} />
-    //     ))}
-    //   </div>
-    // </div>
-    <></>
+    <div className="home">
+      <h1>Rides</h1>
+      <div className="rides-div">
+        {rides.map((ride) => (
+          <Ride key={ride._id} ride={ride} />
+        ))}
+      </div>
+    </div>
   )
 }
 

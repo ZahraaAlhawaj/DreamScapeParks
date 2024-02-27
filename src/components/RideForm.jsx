@@ -7,13 +7,15 @@ const RideForm = () => {
     pic: useRef(null)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log({
+    const BASE_URL = import.meta.env.VITE_BASE_URL
+    const newRide = {
       name: formRef.name.current.value,
       price: formRef.price.current.value,
       pic: formRef.pic.current.value
-    })
+    }
+    await axios.post(`${BASE_URL}/rides`, newRide)
     e.target.reset()
   }
 

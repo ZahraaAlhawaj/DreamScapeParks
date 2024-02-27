@@ -1,38 +1,57 @@
-import dummyFoodArray from '../Data/food'
-import dummyRidesArray from '../Data/rides'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import axios from 'axios'
 
 const purchaseTicket = () => {
   let ticket = {
     personName: '',
+    email: '',
     food: [],
-    rides: [],
+    ride: [],
     totalCost: 0
   }
+  const [rides, setRides] = useState([])
+  const [foods, setFoods] = useState([])
+
+  useEffect(() => {
+    const BASE_URL = import.meta.env.VITE_BASE_URL
+    const getData = async () => {
+      const response1 = await axios.get(`${BASE_URL}/rides`)
+      setRides(response1.data)
+      const response2 = await axios.get(`${BASE_URL}/food`)
+      setFoods(response2.data)
+    }
+    getData()
+  }, [])
 
   const [checkedFoods, setCheckedFoods] = useState({})
   const [foodQuantity, setFoodQuantity] = useState({})
   const [checkedRides, setCheckedRides] = useState({})
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    const BASE_URL = import.meta.env.VITE_BASE_URL
     ticket.personName = e.target.name.value
     ticket.totalCost = totalPrice()
-    dummyFoodArray.forEach((food) => {
+    foods.forEach((food) => {
       if (
         e.target[food.name][0] !== undefined &&
         e.target[food.name][1].value !== ''
       ) {
-        ticket.food.push(e.target[food.name][0].value)
+        ticket.food.push({
+          name: e.target[food.name][0].value,
+          qty: e.target[food.name][1].value
+        })
       }
     })
-    dummyRidesArray.forEach((ride) => {
-      e.target[ride.name].checked &&
-        ticket.rides.push(e.target[ride.name].value)
+    rides.forEach((ride) => {
+      e.target[ride.name].checked && ticket.ride.push(e.target[ride.name].value)
     })
+
+    console.log(ticket)
+    await axios.post(`${BASE_URL}/tickets`, ticket)
+
     e.target.reset()
     setCheckedFoods({})
-    console.log(ticket)
   }
 
   const handleFoodChange = (e) => {
@@ -55,18 +74,14 @@ const purchaseTicket = () => {
     let total = 0
     for (const food in foodQuantity) {
       if (checkedFoods[food]) {
-        const dummyFood = dummyFoodArray.find(
-          (dummyFood) => dummyFood.name == food
-        )
+        const dummyFood = foods.find((dummyFood) => dummyFood.name == food)
         total += parseFloat(dummyFood.price) * parseInt(foodQuantity[food])
       }
     }
 
     for (const [key, value] of Object.entries(checkedRides)) {
       if (value) {
-        const dummyRide = dummyRidesArray.find(
-          (dummyRide) => dummyRide.name === key
-        )
+        const dummyRide = rides.find((dummyRide) => dummyRide.name === key)
         total += parseInt(dummyRide.price)
       }
     }
@@ -81,8 +96,8 @@ const purchaseTicket = () => {
         <input type="text" id="name"></input>
         <h4>Food: </h4>
         <div className="options-container">
-          {dummyFoodArray.map((food) => (
-            <div id="food" key={food.id}>
+          {foods.map((food) => (
+            <div id="food" key={food._id}>
               <label htmlFor={`${food.name}`}>
                 <input
                   type="checkbox"
@@ -109,13 +124,13 @@ const purchaseTicket = () => {
         </div>
         <h4>Rides: </h4>
         <div className="options-container">
-          {dummyRidesArray.map((ride) => (
-            <label htmlFor={`${ride.name}`} key={ride.id}>
+          {rides.map((ride) => (
+            <label htmlFor={`${ride.name}`} key={ride._id}>
               <input
                 type="checkbox"
                 name="ride"
                 id={`${ride.name}`}
-                value={ride.name}
+                value={ride._id}
                 onChange={handleRideChange}
               />
               {ride.name} - {ride.price} $
