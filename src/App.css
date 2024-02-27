@@ -49,7 +49,7 @@ body {
 .toggle-buttons {
   display: flex;
   gap: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   align-items: center;
   align-self: center;
   width: 700px;
@@ -68,7 +68,7 @@ body {
   flex-direction: column;
   row-gap: 20px;
   font-size: 2em;
-  margin: 10% 0%;
+  margin: 7% 0%;
 
   /* align-items: center; */
 }
@@ -77,13 +77,14 @@ body {
   display: flex;
   justify-content: space-between;
   /* text-align: center; */
-  column-gap: 50px;
+  column-gap: 13px;
   /* max-width: 300px; */
 }
 .form-input input {
   width: 500px;
   height: 40px;
   font-size: 1.1em;
+  border-radius: 20px;
 }
 .form-title {
   text-align: center;
@@ -245,18 +246,13 @@ body {
   justify-content: center;
 }
 
-.ticket {
-  border-radius: 5px;
-  background-color: white;
-  margin: 20px;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-  padding: 2px 12px;
-}
-
 #trash {
   background: none;
   border: none;
   padding: 0;
+  cursor: pointer;
+  text-align: end;
+  margin-top: -11px;
 }
 .about {
   margin-top: 10%;
@@ -265,7 +261,7 @@ body {
   align-items: center;
 }
 .form-button {
-  margin-top: 15%;
+  margin-top: 5%;
   width: 30%;
   height: 40px;
   align-self: center;
@@ -296,7 +292,60 @@ body {
   );
 }
 
-.food-pic,
+.main-ticket {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ticket {
+  border-radius: 5px;
+  background-color: white;
+  margin: 20px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  padding: 0px 0px;
+  display: flex;
+  height: 150px;
+  width: 70%;
+}
+
+.img-ticket {
+  padding: 0px;
+  margin-right: 10px;
+  height: 100%;
+  width: 96%;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.left-ticket {
+  width: 50%;
+}
+
+.right-ticket {
+  height: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+
+h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+p {
+  margin: 7px 0px;
+}
+
+.selected-rides,
+.selected-food {
+  display: inline-block;
+}
+  .food-pic,
 .ride-pic {
   width: 60px;
   /* height: 60px; */

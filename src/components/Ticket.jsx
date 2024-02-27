@@ -8,7 +8,7 @@ const Ticket = () => {
 
   useEffect(() => {
     getTickets()
-  })
+  }, [])
 
   const getTickets = async () => {
     const response = await axios.get(`${BASE_URL}/tickets`)
@@ -19,33 +19,61 @@ const Ticket = () => {
     await axios.delete(`${BASE_URL}/tickets/${index}`)
   }
   return (
-    <div>
-      <h1>All tickets</h1>
+    <div className="main-ticket">
+      <div>
+        <h1>All tickets</h1>
+      </div>
       {tickets.map((ticket) => (
         <div key={ticket._id} className="ticket">
-          <p>{ticket.personName}</p>
-          <p>{ticket.totalCost}</p>
-          {ticket.food.map((food) => (
-            <div key={food._id}>
-              <p>{food.name}</p>
+          <div className="left-ticket">
+            <img
+              className="img-ticket"
+              src="https://i.pinimg.com/564x/ac/16/c9/ac16c97b9c019400836816f27f06219e.jpg"
+              alt=""
+            />
+          </div>
+          <div className="right-ticket">
+            <div className="personName">
+              <h4>{ticket.personName}</h4>
             </div>
-          ))}
-          {ticket.ride.map((ride) => (
-            <div key={ride._id}>
-              <p>{ride.name}</p>
+
+            <div className="details">
+              <b>🎡Selected Rides: </b>
+              {ticket.ride.map((ride, index) => (
+                <div className="selected-rides" key={ride._id}>
+                  <p>
+                    {ride.name}
+                    {index < ticket.ride.length - 1 && <b>-</b>}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-          <button
-            id="trash"
-            onClick={(e) => {
-              deleteTicket(e, ticket._id)
-            }}
-          >
-            <i
-              className="fa fa-trash-o"
-              style={{ fontSize: '20px', color: 'red' }}
-            ></i>
-          </button>
+            <div>
+              <b>🍿Selected Food: </b>
+              {ticket.food.map((food, index) => (
+                <div key={food._id} className="selected-food">
+                  <p>
+                    {food.name}
+                    {index < ticket.food.length - 1 && <b>-</b>}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p>
+              <b>💲Total Cost: </b>${ticket.totalCost}
+            </p>
+            <button
+              id="trash"
+              onClick={(e) => {
+                deleteTicket(e, ticket._id)
+              }}
+            >
+              <i
+                className="fa fa-trash-o"
+                style={{ fontSize: '20px', color: 'red' }}
+              ></i>
+            </button>
+          </div>
         </div>
       ))}
     </div>
