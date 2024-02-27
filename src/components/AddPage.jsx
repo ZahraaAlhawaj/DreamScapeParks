@@ -23,7 +23,7 @@ const AddPage = () => {
   }
 
   return (
-    <div>
+    <div className="add-page">
       <section className="toggle-form">
         <button onClick={toggleForm} value="ride">
           Ride

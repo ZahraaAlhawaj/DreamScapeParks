@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import axios from 'axios'
 const RideForm = () => {
   const formRef = {
     name: useRef(null),
@@ -21,11 +22,11 @@ const RideForm = () => {
       ride form
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
-        <input type="text" ref={formRef.name} />
+        <input id="name" type="text" ref={formRef.name} />
         <label htmlFor="price">Price</label>
-        <input type="number" ref={formRef.price} />
+        <input id="price" type="number" ref={formRef.price} />
         <label htmlFor="pic">Picture</label>
-        <input type="text" ref={formRef.pic} />
+        <input id="pic" type="text" ref={formRef.pic} />
         <button type="submit">Add Ride</button>
       </form>
     </div>
