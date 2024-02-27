@@ -1,3 +1,22 @@
 body {
   margin: 0;
 }
+.navbar {
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.7em;
+  background-color: orange;
+}
+
+.nav-links a {
+  margin: 10px;
+}
+
+.active {
+  color: green;
+}
+.options-container {
+  display: flex;
+  flex-direction: column;
+}
