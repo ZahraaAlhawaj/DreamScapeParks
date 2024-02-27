@@ -23,19 +23,19 @@ const RideForm = () => {
     <div>
       <h3 className="form-title">Add Ride Form</h3>
       <form onSubmit={handleSubmit} className="add-form">
-        <div className="input-field form-input">
+        <div className=" form-input">
           <label htmlFor="name">Ride Name: </label>
           <input id="name" type="text" ref={formRef.name} />
         </div>
-        <div className="input-field form-input">
+        <div className=" form-input">
           <label htmlFor="price">Price: </label>
           <input id="price" type="number" ref={formRef.price} />
         </div>
-        <div className="input-field form-input">
+        <div className=" form-input">
           <label htmlFor="pic">Picture: </label>
           <input id="pic" type="text" ref={formRef.pic} />
         </div>
-        <button type="submit" className="button">
+        <button type="submit" className="button form-button">
           <span className="button-content">Add Ride</span>
         </button>
       </form>
