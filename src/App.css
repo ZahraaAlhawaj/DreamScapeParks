@@ -52,10 +52,20 @@ body {
   align-items: center;
 }
 
+.form-section {
+  /* width: 10px; */
+}
+
 .add-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.form-input {
+  display: flex;
+  justify-content: space-between;
+  /* max-width: 300px; */
 }
 
 .form-title {
@@ -183,14 +193,27 @@ body {
   width: 300px;
   height: 300px;
   background-color: rgb(51, 30, 54, 0.4);
+  border: 2px solid #331e36;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px #331e36;
 }
 
 .ride > img {
+  border: 2px solid #331e36;
+  border-radius: 30px;
   height: 50%;
-  width: 100%;
+  width: 90%;
+  margin-top: 5%;
 }
 .rides-div {
   display: flex;
   gap: 50px;
   flex-wrap: wrap;
+}
+
+.about {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
