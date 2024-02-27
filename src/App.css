@@ -5,7 +5,7 @@ body {
   background-color: #f1d2e751;
 }
 .navbar {
-  padding: 2%;
+  padding: 1%;
   display: flex;
   justify-content: space-between;
   font-size: 1.6em;
@@ -17,9 +17,18 @@ body {
   color: #ecfee8;
   text-decoration: none;
 }
-
+.nav-links {
+  padding-top: 1%;
+}
 .active {
   color: #70cbc3 !important;
+}
+nav img {
+  width: 250px;
+}
+.about img {
+  width: 700px;
+  margin: 3%;
 }
 .options-container {
   display: flex;
