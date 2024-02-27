@@ -24,13 +24,21 @@ const FoodForm = () => {
     <div>
       <h3 className="form-title">Add Food Form</h3>
       <form onSubmit={handleSubmit} className="add-form">
-        <label htmlFor="name">Food Name</label>
-        <input id="name" type="text" ref={formRef.name} />
-        <label htmlFor="price">Price</label>
-        <input id="price" type="number" ref={formRef.price} />
-        <label htmlFor="pic">Picture</label>
-        <input id="pic" type="text" ref={formRef.pic} />
-        <button type="submit">Add Food</button>
+        <div className="form-input">
+          <label htmlFor="name">Food Name:</label>
+          <input id="name" type="text" ref={formRef.name} />
+        </div>
+        <div className="form-input">
+          <label htmlFor="price">Price:</label>
+          <input id="price" type="number" ref={formRef.price} />
+        </div>
+        <div className="form-input">
+          <label htmlFor="pic">Picture:</label>
+          <input id="pic" type="text" ref={formRef.pic} />
+        </div>
+        <button className="button form-button" type="submit">
+          <span className="button-content">Add Food</span>
+        </button>
       </form>
     </div>
   )

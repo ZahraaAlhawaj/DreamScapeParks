@@ -19,16 +19,18 @@ const AddPage = () => {
   }, [form])
 
   const toggleForm = (event) => {
+    console.log(event)
+    console.log(event.target.value)
     event.target.value === 'ride' ? setForm('ride') : setForm('food')
   }
 
   return (
     <div className="add-page">
       <section className="toggle-buttons">
-        <button onClick={toggleForm} value="ride">
+        <button onClick={toggleForm} value="ride" className="addpage-btn">
           Ride
         </button>
-        <button onClick={toggleForm} value="food">
+        <button onClick={toggleForm} value="food" className="addpage-btn">
           Food
         </button>
       </section>
