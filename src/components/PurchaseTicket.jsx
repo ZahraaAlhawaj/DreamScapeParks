@@ -1,6 +1,6 @@
 import dummyFoodArray from '../Data/food'
 import dummyRidesArray from '../Data/rides'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 
 const purchaseTicket = () => {
   let ticket = {
@@ -69,69 +69,110 @@ const purchaseTicket = () => {
         const dummyRide = dummyRidesArray.find(
           (dummyRide) => dummyRide.name === key
         )
-        total += parseInt(dummyRide.price)
+        total += parseFloat(dummyRide.price)
       }
     }
     return total.toFixed(2)
   }
 
+  const quaititylabel = () => {
+    for (const [key, value] of Object.entries(checkedFoods)) {
+      if (value) {
+        return true
+      }
+    }
+    return false
+  }
+  console.log(quaititylabel())
   return (
     <div id="ticket-form">
       <h1>Purchase Ticket</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name: </label>
-          <input type="text" id="name"></input>
+        <div id="contact-details">
+          <h4 className="form-element-header">Contact Details</h4>
+          <div className="input-field">
+            <label htmlFor="name">Name: </label>
+            <input type="text" id="name"></input>
+          </div>
+          <div className="input-field">
+            <label htmlFor="email">Email: </label>
+            <input type="email" id="email"></input>
+          </div>
         </div>
-        <div>
-          <label htmlFor="email">Email: </label>
-          <input type="email" id="email"></input>
-        </div>
-        <h4>Food: </h4>
-        <div className="options-container">
-          {dummyFoodArray.map((food) => (
-            <div id="food" key={food.id}>
-              <label htmlFor={`${food.name}`}>
-                <input
-                  type="checkbox"
-                  name="food"
-                  id={food.name}
-                  value={food.name}
-                  onChange={handleFoodChange}
-                />
-                {food.name} - {food.price} $
-              </label>
-              {checkedFoods[food.name] && (
-                <input
-                  type="number"
-                  id={`${food.name}Qty`}
-                  name={food.name}
-                  min="1"
-                  max="100"
-                  value={foodQuantity[food.name]}
-                  onChange={handleQuantityChange}
-                ></input>
-              )}
+
+        <div className="food-rides-contatiner">
+          <div className="options-container">
+            <h4 className="form-element-header">Food</h4>
+            <div id="title">
+              <div className="item-label">
+                <div>&nbsp;</div>
+                <div>Name</div>
+                <div>Price</div>
+              </div>
+              {quaititylabel() && <div>Quantity</div>}
             </div>
-          ))}
+            {dummyFoodArray.map((food) => (
+              <div id="food" key={food.id}>
+                <label htmlFor={`${food.name}`} className="item-label">
+                  <input
+                    type="checkbox"
+                    name="food"
+                    id={food.name}
+                    value={food.name}
+                    onChange={handleFoodChange}
+                  />
+                  <div>{food.name}</div>
+                  <div>${food.price}</div>
+                </label>
+                {checkedFoods[food.name] && (
+                  <input
+                    type="number"
+                    id={`${food.name}Qty`}
+                    name={food.name}
+                    min="1"
+                    max="100"
+                    value={foodQuantity[food.name]}
+                    onChange={handleQuantityChange}
+                  ></input>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="options-container">
+            <h4 className="form-element-header">Rides</h4>
+            <div id="title">
+              <div className="item-label">
+                <div>&nbsp;</div>
+                <div>Name</div>
+                <div>Price</div>
+              </div>
+            </div>
+            {dummyRidesArray.map((ride) => (
+              <div id="ride" key={ride.id}>
+                <label htmlFor={`${ride.name}`} className="item-label">
+                  <input
+                    type="checkbox"
+                    name="ride"
+                    id={`${ride.name}`}
+                    value={ride.name}
+                    onChange={handleRideChange}
+                  />
+                  <div>{ride.name}</div>
+                  <div>${ride.price}</div>
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
-        <h4>Rides: </h4>
-        <div className="options-container">
-          {dummyRidesArray.map((ride) => (
-            <label htmlFor={`${ride.name}`} key={ride.id}>
-              <input
-                type="checkbox"
-                name="ride"
-                id={`${ride.name}`}
-                value={ride.name}
-                onChange={handleRideChange}
-              />
-              {ride.name} - {ride.price} $
-            </label>
-          ))}
+        <div class="center-item">
+          <h3 id="totalPrice">
+            Total Price: <span id="price">$ {totalPrice()}</span>{' '}
+          </h3>
+          <button class="button" type="submit">
+            <span class="button-content">Purchase Ticket </span>
+          </button>
         </div>
-        <h3 id="totalPrice">Total Price: {totalPrice()} </h3>
-        <button type="submit"> Submit</button>
       </form>
     </div>
   )

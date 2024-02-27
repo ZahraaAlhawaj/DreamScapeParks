@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
 body {
   margin: 0;
+  font-family: 'ABeeZee', sans-serif;
+  background-color: #f1d2e751;
 }
 .navbar {
   padding: 2%;
   display: flex;
   justify-content: space-between;
-  font-size: 1.4em;
+  font-size: 1.6em;
   background-color: #331e36;
   /* color: #ecfee8; */
 }
@@ -17,11 +20,24 @@ body {
 }
 
 .active {
-  color: #c2efeb !important;
+  color: #70cbc3 !important;
 }
 .options-container {
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+
+  max-height: 400px;
+  overflow: scroll;
+  font-size: 2.5vh;
+}
+.form-element-header {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 0;
+  padding: 3%;
+  background: #3d3a4e;
+  color: #ecfee8;
 }
 .add-page {
   margin-top: 10%;
@@ -44,5 +60,114 @@ body {
 }
 
 .form-title {
+  text-align: center;
+}
+#contact-details {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  max-width: max-content;
+  margin: 0 auto;
+  margin-bottom: 5%;
+  font-size: 1.5em;
+}
+#contact-details h4 {
+  text-align: center;
+}
+.food-rides-contatiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3%;
+}
+#ticket-form h1 {
+  text-align: center;
+}
+#food,
+#ride,
+#title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 15px;
+}
+.item-label {
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 25rem;
+}
+.input-field {
+  padding: 2% 30%;
+  min-width: 600px;
+  font-size: 1.1em;
+}
+.input-field input {
+  width: 200px;
+  height: 25px;
+  font-size: 0.9em;
+}
+#food input {
+  font-size: 0.8em;
+}
+#totalPrice {
+  font-size: 1.7em;
+  background: #3d3a4e;
+  padding: 1.2%;
+  color: #ecfee8;
+}
+#price {
+  color: #3ee52c;
+}
+#title {
+  font-weight: bold;
+  color: #3c0226;
+}
+
+/* button css taken from https://uiverse.io/Madflows/stale-baboon-45 */
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 3rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2%;
+  font-size: 1.2em;
+  font-family: 'ABeeZee', sans-serif;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+.center-item {
   text-align: center;
 }
