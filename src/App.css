@@ -5,17 +5,19 @@ body {
   padding: 2%;
   display: flex;
   justify-content: space-between;
-  font-size: 1.7em;
-  background-color: orange;
+  font-size: 1.4em;
+  background-color: #331e36;
+  /* color: #ecfee8; */
 }
 
 .nav-links a {
   margin: 10px;
   color: #ecfee8;
+  text-decoration: none;
 }
 
 .active {
-  color: blue !important;
+  color: #c2efeb !important;
 }
 .options-container {
   display: flex;

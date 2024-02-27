@@ -15,14 +15,15 @@ const Home = () => {
   }, [])
 
   return (
-    <div>
-      <h1>Rides</h1>
-      <div className="rides-div">
-        {rides.map((ride) => (
-          <Ride key={ride._id} ride={ride} />
-        ))}
-      </div>
-    </div>
+    // <div>
+    //   <h1>Rides</h1>
+    //   <div className="rides-div">
+    //     {rides.map((ride) => (
+    //       <Ride key={ride._id} ride={ride} />
+    //     ))}
+    //   </div>
+    // </div>
+    <></>
   )
 }
 
