@@ -6,7 +6,7 @@ const purchaseTicket = () => {
     personName: '',
     email: '',
     food: [],
-    rides: [],
+    ride: [],
     totalCost: 0
   }
   const [rides, setRides] = useState([])
@@ -22,7 +22,6 @@ const purchaseTicket = () => {
     }
     getData()
   }, [])
-  console.log(rides)
 
   const [checkedFoods, setCheckedFoods] = useState({})
   const [foodQuantity, setFoodQuantity] = useState({})
@@ -38,19 +37,21 @@ const purchaseTicket = () => {
         e.target[food.name][0] !== undefined &&
         e.target[food.name][1].value !== ''
       ) {
-        ticket.food.push(e.target[food.name][0].value)
+        ticket.food.push({
+          name: e.target[food.name][0].value,
+          qty: e.target[food.name][1].value
+        })
       }
     })
     rides.forEach((ride) => {
-      e.target[ride.name].checked &&
-        ticket.rides.push(e.target[ride.name].value)
+      e.target[ride.name].checked && ticket.ride.push(e.target[ride.name].value)
     })
 
+    console.log(ticket)
     await axios.post(`${BASE_URL}/tickets`, ticket)
 
     e.target.reset()
     setCheckedFoods({})
-    console.log(ticket)
   }
 
   const handleFoodChange = (e) => {
@@ -129,7 +130,7 @@ const purchaseTicket = () => {
                 type="checkbox"
                 name="ride"
                 id={`${ride.name}`}
-                value={ride.name}
+                value={ride._id}
                 onChange={handleRideChange}
               />
               {ride.name} - {ride.price} $
