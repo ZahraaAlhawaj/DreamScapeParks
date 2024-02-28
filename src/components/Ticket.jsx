@@ -33,13 +33,7 @@ const Ticket = () => {
       </div>
       {tickets.map((ticket, index) => (
         <div key={ticket._id} className="ticket">
-          <div className="left-ticket">
-            <img
-              className="img-ticket"
-              src="https://i.pinimg.com/564x/ac/16/c9/ac16c97b9c019400836816f27f06219e.jpg"
-              alt=""
-            />
-          </div>
+          <div className="left-ticket"></div>
           <div className="right-ticket">
             <div className="personName">
               <h4>{ticket.personName}</h4>
