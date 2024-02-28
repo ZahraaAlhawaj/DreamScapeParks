@@ -377,3 +377,17 @@ p {
   width: 60px;
   height: 60px;
 }
+#search-rides {
+  display: flex;
+  font-size: 32px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  column-gap: 20px;
+  font-weight: bold;
+}
+#search-rides input {
+  width: 400px;
+  height: 35px;
+  font-size: 0.9em;
+  border-radius: 20px;
+}
