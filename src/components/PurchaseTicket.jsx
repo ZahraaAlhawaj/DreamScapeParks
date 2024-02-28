@@ -49,8 +49,6 @@ const purchaseTicket = () => {
     rides.forEach((ride) => {
       e.target[ride.name].checked && ticket.ride.push(e.target[ride.name].value)
     })
-
-    console.log(ticket)
     await axios.post(`${BASE_URL}/tickets`, ticket)
 
     e.target.reset()
@@ -100,7 +98,7 @@ const purchaseTicket = () => {
     }
     return false
   }
-  console.log(quaititylabel())
+
   return (
     <div id="ticket-form">
       <h1>Purchase Ticket</h1>
