@@ -10,13 +10,7 @@ The development of the website was a collaborative effort involving the followin
 
 - [Mariam](https://github.com/MariamBaloch)
 - [Jassim](https://github.com/9Jassim)
-- [Zahra](https://github.com/ZahraaAlhawaj)
-
-## Development Technologies and Tools
-
-- **Frontend**: React
-- **Backend**: Express.js and Node.js
-- **Database**: MongoDB
+- [Zahraa](https://github.com/ZahraaAlhawaj)
 
 ## Development Outline
 
