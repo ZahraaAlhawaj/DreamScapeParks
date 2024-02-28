@@ -5,7 +5,7 @@ body {
   background-color: #f1d2e751;
 }
 .navbar {
-  padding: 2%;
+  padding: 1%;
   display: flex;
   justify-content: space-between;
   font-size: 1.6em;
@@ -17,9 +17,18 @@ body {
   color: #ecfee8;
   text-decoration: none;
 }
-
+.nav-links {
+  padding-top: 1%;
+}
 .active {
   color: #70cbc3 !important;
+}
+nav img {
+  width: 250px;
+}
+.about img {
+  width: 700px;
+  margin: 3%;
 }
 .options-container {
   display: flex;
@@ -30,6 +39,25 @@ body {
   overflow: scroll;
   font-size: 2.5vh;
   max-width: 450px;
+}
+.options-container::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.options-container::-webkit-scrollbar-track {
+  background: #f1f1f100;
+  border-radius: 50px;
+}
+
+.options-container::-webkit-scrollbar-thumb {
+  background: #d3aac9;
+  border-radius: 50px;
+}
+
+.options-container::-webkit-scrollbar-thumb:hover {
+  background: #d18293;
+  border-radius: 50px;
 }
 .form-element-header {
   text-align: center;
@@ -98,9 +126,7 @@ body {
   max-width: 50%;
   margin: 0 auto;
   margin-bottom: 5%;
-  font-size: 1.5em;
-  /* justify-content: center;
-  align-items: center; */
+  font-size: 1.3em;
 }
 #contact-details h4 {
   text-align: center;
@@ -122,12 +148,19 @@ body {
   border-bottom: 1px solid black;
   padding: 15px;
 }
+.empty-div {
+  min-width: 82px;
+}
 .item-label {
   padding-right: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 45rem;
   column-gap: 50px;
+}
+.item-name {
+  margin: 0 7px;
+  max-width: 60px;
 }
 .input-field {
   padding: 2% 30%;
@@ -345,8 +378,8 @@ p {
 .selected-food {
   display: inline-block;
 }
-  .food-pic,
+.food-pic,
 .ride-pic {
   width: 60px;
-  /* height: 60px; */
+  height: 60px;
 }
