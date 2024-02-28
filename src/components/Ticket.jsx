@@ -19,7 +19,6 @@ const Ticket = () => {
     setTickets(response.data)
   }
 
-
   const deleteTicket = async (e, index) => {
     await axios.delete(`${BASE_URL}/tickets/${index}`)
     setDeleted(true)
@@ -29,8 +28,7 @@ const Ticket = () => {
       <div>
         <h1>All tickets</h1>
       </div>
-      {console.log('s', tickets.current)}
-      {tickets.current.map((ticket, index) => (
+      {tickets.map((ticket, index) => (
         <div key={ticket._id} className="ticket">
           <div className="left-ticket">
             <img
