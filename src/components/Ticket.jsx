@@ -26,6 +26,7 @@ const Ticket = () => {
     await axios.delete(`${BASE_URL}/tickets/${index}`)
     setDeleted(true)
   }
+
   return (
     <div className="main-ticket">
       <div>
