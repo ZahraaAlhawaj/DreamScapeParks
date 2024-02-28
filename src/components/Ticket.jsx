@@ -5,10 +5,12 @@ const Ticket = () => {
   const BASE_URL = import.meta.env.VITE_BASE_URL
 
   const [tickets, setTickets] = useState([])
+  const [deleted, setDeleted] = useState(false)
 
   useEffect(() => {
     getTickets()
-  }, [])
+    setDeleted(false)
+  }, [deleted])
 
   const getTickets = async () => {
     const response = await axios.get(`${BASE_URL}/tickets`)
@@ -17,6 +19,7 @@ const Ticket = () => {
 
   const deleteTicket = async (e, index) => {
     await axios.delete(`${BASE_URL}/tickets/${index}`)
+    setDeleted(true)
   }
   return (
     <div className="main-ticket">
