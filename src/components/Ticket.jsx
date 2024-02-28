@@ -26,14 +26,11 @@ const Ticket = () => {
     await axios.delete(`${BASE_URL}/tickets/${index}`)
     setDeleted(true)
   }
-<<<<<<< HEAD
-=======
   const handleChange = (e) => {
     if (e.target.name === 'search') {
       setSearchTicket(e.target.value)
     }
   }
->>>>>>> 38a3ee4d0041913d2032723f4015e021e4dd2293
 
   return (
     <div className="main-ticket">
