@@ -38,7 +38,7 @@ nav img {
   max-height: 400px;
   overflow-y: scroll;
   font-size: 2.5vh;
-  max-width: 450px;
+  max-width: 550px;
 }
 .options-container::-webkit-scrollbar {
   width: 7px;
