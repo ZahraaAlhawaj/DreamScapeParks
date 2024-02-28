@@ -2,7 +2,12 @@ import { NavLink } from 'react-router-dom'
 const Nav = () => {
   return (
     <nav className="navbar">
-      <img src="" alt="logo" />
+      {
+        <NavLink to="/">
+          <img src="https://i.imgur.com/ktzQdvk.png" alt="logo" />
+        </NavLink>
+      }
+
       <div className="nav-links">
         {<NavLink to="/">Home</NavLink>}
         {<NavLink to="/purchase">Purcase Tickets</NavLink>}

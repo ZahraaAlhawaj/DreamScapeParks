@@ -123,7 +123,7 @@ const purchaseTicket = () => {
             <div id="title">
               <div className="item-label">
                 <div>&nbsp;</div>
-                <div>&nbsp;</div>
+                <div className="empty-div"></div>
                 <div>Name</div>
                 <div>Price</div>
               </div>
@@ -140,7 +140,7 @@ const purchaseTicket = () => {
                     onChange={handleFoodChange}
                   />
                   <img src={food.pic} alt={food.name} className="food-pic" />
-                  <div>{food.name}</div>
+                  <div className="item-name">{food.name}</div>
                   <div>${food.price}</div>
                 </label>
                 {checkedFoods[food.name] && (
@@ -179,7 +179,7 @@ const purchaseTicket = () => {
                     onChange={handleRideChange}
                   />
                   <img src={ride.pic} alt={ride.name} className="ride-pic" />
-                  <div>{ride.name}</div>
+                  <div className="item-name">{ride.name}</div>
                   <div>${ride.price}</div>
                 </label>
               </div>
