@@ -36,7 +36,7 @@ nav img {
   border: 1px solid black;
   min-height: 400px;
   max-height: 400px;
-  overflow: scroll;
+  overflow-y: scroll;
   font-size: 2.5vh;
   max-width: 450px;
 }

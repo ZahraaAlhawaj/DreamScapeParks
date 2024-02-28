@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-
+import { useNavigate } from 'react-router-dom'
 const Ticket = () => {
   const BASE_URL = import.meta.env.VITE_BASE_URL
+  let navigate = useNavigate()
 
   const [tickets, setTickets] = useState([])
   const [deleted, setDeleted] = useState(false)
@@ -14,8 +15,10 @@ const Ticket = () => {
 
   const getTickets = async () => {
     const response = await axios.get(`${BASE_URL}/tickets`)
-    setTickets(response.data)
+    tickets.current = response.data
+    //setTickets(response.data)
   }
+
 
   const deleteTicket = async (e, index) => {
     await axios.delete(`${BASE_URL}/tickets/${index}`)
@@ -26,7 +29,8 @@ const Ticket = () => {
       <div>
         <h1>All tickets</h1>
       </div>
-      {tickets.map((ticket) => (
+      {console.log('s', tickets.current)}
+      {tickets.current.map((ticket, index) => (
         <div key={ticket._id} className="ticket">
           <div className="left-ticket">
             <img
@@ -68,7 +72,7 @@ const Ticket = () => {
             <button
               id="trash"
               onClick={(e) => {
-                deleteTicket(e, ticket._id)
+                deleteTicket(e, ticket._id, index)
               }}
             >
               <i
