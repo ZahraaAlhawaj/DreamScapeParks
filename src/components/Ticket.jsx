@@ -15,8 +15,8 @@ const Ticket = () => {
 
   const getTickets = async () => {
     const response = await axios.get(`${BASE_URL}/tickets`)
-    tickets.current = response.data
-    //setTickets(response.data)
+    response.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    setTickets(response.data)
   }
 
 
