@@ -2,7 +2,9 @@
 body {
   margin: 0;
   font-family: 'ABeeZee', sans-serif;
-  background-color: #f1d2e751;
+  background-image: url(https://i.pinimg.com/564x/51/ab/25/51ab2561810aa58e0348417643c2e28b.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .navbar {
   padding: 1%;
@@ -259,10 +261,10 @@ nav img {
   align-items: center;
   width: 300px;
   height: 300px;
-  background-color: rgb(51, 30, 54, 0.4);
+  background-color: rgb(184, 149, 189, 0.29);
   border: 2px solid #331e36;
   border-radius: 30px;
-  box-shadow: 5px 5px 5px #331e36;
+  box-shadow: 5px 5px 5px #331e364f;
 }
 
 .ride > img {
