@@ -27,7 +27,7 @@ body {
   border: 1px solid black;
   min-height: 400px;
   max-height: 400px;
-  overflow: scroll;
+  overflow-y: scroll;
   font-size: 2.5vh;
   max-width: 450px;
 }
@@ -345,7 +345,7 @@ p {
 .selected-food {
   display: inline-block;
 }
-  .food-pic,
+.food-pic,
 .ride-pic {
   width: 60px;
   /* height: 60px; */
