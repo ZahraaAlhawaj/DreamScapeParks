@@ -5,12 +5,13 @@ const Ticket = () => {
   const BASE_URL = import.meta.env.VITE_BASE_URL
   let navigate = useNavigate()
 
-  let tickets = useRef([])
+  const [tickets, setTickets] = useState([])
+  const [deleted, setDeleted] = useState(false)
 
   useEffect(() => {
     getTickets()
-    console.log(tickets)
-  }, [tickets])
+    setDeleted(false)
+  }, [deleted])
 
   const getTickets = async () => {
     const response = await axios.get(`${BASE_URL}/tickets`)
@@ -18,11 +19,10 @@ const Ticket = () => {
     //setTickets(response.data)
   }
 
-  const deleteTicket = async (e, id, index) => {
-    await axios.delete(`${BASE_URL}/tickets/${id}`)
-    //navigate('/tickets')
-    tickets.splice(index, 1)
-    tickets.current = tickets
+
+  const deleteTicket = async (e, index) => {
+    await axios.delete(`${BASE_URL}/tickets/${index}`)
+    setDeleted(true)
   }
   return (
     <div className="main-ticket">
