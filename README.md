@@ -27,23 +27,27 @@ The website utilizes React for the frontend interface, providing users with an i
 
 #### Home
 
-![Home]()
+![Home](public/images/Screenshot%20from%202024-02-28%2014-36-46.png)
 
 #### Add Food Items
 
-![Add Food Items]()
+![Add Food Items](/public/images/food%20form.png)
 
 #### Add Rides
 
-![Manage Rides]()
+![Manage Rides](public/images/screencapture-localhost-5173-add-2024-02-28-14_40_27.png)
 
 #### Ticket Purchase
 
-![Ticket Management]()
+![Ticket Management](public/images//screencapture-localhost-5173-purchase-2024-02-28-14_38_17.png)
 
 #### All Tickets
 
-![All Tickets]()
+![All Tickets](public/images/screencapture-localhost-5173-tickets-2024-02-28-14_40_12.png)
+
+#### About
+
+![About](public/images/about.png)
 
 ## Technologies Used
 
@@ -51,3 +55,7 @@ The website utilizes React for the frontend interface, providing users with an i
 - ![Express badge](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 - ![MongoDB badge](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 - ![Node.js badge](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+
+### Deployed Link
+
+- [DreamScapeParks Website](https://dreamscape-parks.surge.sh/)
