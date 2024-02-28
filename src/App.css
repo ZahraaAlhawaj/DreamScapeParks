@@ -40,6 +40,25 @@ nav img {
   font-size: 2.5vh;
   max-width: 450px;
 }
+.options-container::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.options-container::-webkit-scrollbar-track {
+  background: #f1f1f100;
+  border-radius: 50px;
+}
+
+.options-container::-webkit-scrollbar-thumb {
+  background: #d3aac9;
+  border-radius: 50px;
+}
+
+.options-container::-webkit-scrollbar-thumb:hover {
+  background: #d18293;
+  border-radius: 50px;
+}
 .form-element-header {
   text-align: center;
   font-size: 1.2em;
@@ -131,12 +150,19 @@ nav img {
   border-bottom: 1px solid black;
   padding: 15px;
 }
+.empty-div {
+  min-width: 70px;
+}
 .item-label {
   padding-right: 50px;
   display: flex;
   justify-content: space-around;
   width: 45rem;
   column-gap: 50px;
+}
+.item-name {
+  margin: 0 7px;
+  max-width: 60px;
 }
 .input-field {
   padding: 2% 30%;
@@ -354,8 +380,8 @@ p {
 .selected-food {
   display: inline-block;
 }
-  .food-pic,
+.food-pic,
 .ride-pic {
   width: 60px;
-  /* height: 60px; */
+  height: 60px;
 }
