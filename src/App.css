@@ -151,12 +151,12 @@ nav img {
   padding: 15px;
 }
 .empty-div {
-  min-width: 70px;
+  min-width: 82px;
 }
 .item-label {
   padding-right: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 45rem;
   column-gap: 50px;
 }
